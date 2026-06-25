@@ -2,10 +2,25 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello World Step') {
+
+        stage('Build') {
             steps {
-                echo 'Hello World from Jenkins CI/CD 🚀'
-                sh 'cat index.txt'
+                echo 'Building application...'
+                sh 'echo Build completed'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                sh 'echo Tests passed'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+                sh 'echo Deployment successful'
             }
         }
     }
